@@ -11,3 +11,5 @@ __pycache__/
 *.pkl
 .env
 data/
+!src/data/
+!src/data/*.py
