@@ -7,7 +7,7 @@ steps even if the evaluator has not downloaded the Kaggle dataset.
 import os
 from pathlib import Path
 
-from src.utils.config import DATA_DIR, MODEL_DIR
+from src.utils.config import DATA_DIR, MODEL_DIR, ROOT_DIR
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -34,6 +34,10 @@ def ensure_data_available():
     platform (EDA, ML, chatbot) still runs end-to-end out of the box.
     """
     real_file = Path(DATA_DIR) / "application_train.csv"
+    packaged_file = Path(ROOT_DIR) / "src" / "data" / "application_train.csv"
+    if packaged_file.exists():
+        logger.info("Full packaged Home Credit dataset detected.")
+        return "real"
     if real_file.exists():
         logger.info("Real Home Credit dataset detected.")
         return "real"

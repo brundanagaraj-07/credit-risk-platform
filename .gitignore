@@ -13,3 +13,4 @@ __pycache__/
 data/
 !src/data/
 !src/data/*.py
+!src/data/application_train.csv

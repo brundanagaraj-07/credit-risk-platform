@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.utils.config import DATA_DIR
+from src.utils.config import DATA_DIR, ROOT_DIR
 from src.utils.docker_utils import ensure_data_available
 from src.utils.helpers import timeit
 from src.utils.logger import get_logger
@@ -20,9 +20,19 @@ from src.utils.logger import get_logger
 logger = get_logger(__name__)
 
 
+def _application_path(data_dir: Path = DATA_DIR) -> Path:
+    """Use the full packaged dataset when it is available."""
+    configured_path = Path(data_dir) / "application_train.csv"
+    packaged_path = ROOT_DIR / "src" / "data" / "application_train.csv"
+
+    if packaged_path.exists():
+        return packaged_path
+    return configured_path
+
+
 @timeit
 def load_applications(data_dir: Path = DATA_DIR) -> pd.DataFrame:
-    path = Path(data_dir) / "application_train.csv"
+    path = _application_path(data_dir)
     df = pd.read_csv(path)
     logger.info(f"Loaded applications table: {df.shape[0]:,} rows x {df.shape[1]} cols")
     return df
