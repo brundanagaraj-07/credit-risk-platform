@@ -249,3 +249,10 @@
 2026-09-07 16:39:47 | INFO     | src.data.loader | Materialised 'applications' (307,511 rows) into D:\Christ\neostat\credit_risk_platform\credit_risk_platform\data\credit_risk.db
 2026-09-07 16:39:47 | INFO     | __main__ | Training complete. Artifacts saved to /models
 2026-09-07 16:39:48 | INFO     | src.utils.helpers | train finished in 410.08s
+2026-09-07 20:23:43 | INFO     | src.data.loader | Loaded applications table: 25,000 rows x 22 cols
+2026-09-07 20:23:43 | INFO     | src.utils.helpers | load_applications finished in 0.52s
+2026-09-07 20:23:43 | INFO     | src.utils.helpers | load_full_dataset finished in 0.52s
+2026-09-07 20:24:45 | INFO     | src.utils.docker_utils | Real Home Credit dataset detected.
+2026-09-07 20:24:45 | INFO     | src.data.loader | Loaded applications table: 25,000 rows x 22 cols
+2026-09-07 20:24:45 | INFO     | src.utils.helpers | load_applications finished in 0.25s
+2026-09-07 20:24:45 | INFO     | src.utils.helpers | load_full_dataset finished in 0.25s

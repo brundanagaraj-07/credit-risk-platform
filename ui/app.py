@@ -30,7 +30,7 @@ model_ready = ensure_model_available()
 
 st.sidebar.caption(f"Data mode: **{data_mode}**" + (" (synthetic demo data — drop the real Kaggle CSV into /data for production numbers)" if data_mode == "synthetic" else ""))
 if not model_ready:
-    st.sidebar.warning("No trained model found. Run `python -m src.ml.train` first.")
+    st.sidebar.warning("The model could not be trained automatically. Risk scoring is unavailable.")
 
 page = st.sidebar.radio(
     "Navigate",

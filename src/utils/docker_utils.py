@@ -44,6 +44,27 @@ def ensure_data_available():
     return "synthetic"
 
 
-def ensure_model_available():
+def ensure_model_available(auto_train: bool = True):
+    """Ensure model artifacts exist in both Docker and Streamlit Cloud.
+
+    Streamlit Cloud launches the app directly and does not run the Docker
+    entrypoint, so train the demo model lazily when no persisted artifacts
+    are available.
+    """
     model_path = Path(MODEL_DIR) / "credit_risk_model.pkl"
+    if model_path.exists():
+        return True
+
+    if not auto_train:
+        return False
+
+    try:
+        from src.ml.train import train
+
+        logger.info("No trained model found -> training a deployment model.")
+        train()
+    except Exception:
+        logger.exception("Automatic model training failed.")
+        return False
+
     return model_path.exists()
