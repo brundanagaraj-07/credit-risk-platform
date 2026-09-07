@@ -1,0 +1,13 @@
+neostats/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.csv
+*.db
+*.sqlite
+*.sqlite3
+*.dll
+*.pkl
+.env
+data/

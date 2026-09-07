@@ -1,0 +1,26 @@
+# Core
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.1
+lightgbm==4.5.0
+imbalanced-learn==0.12.3
+joblib==1.4.2
+
+# Explainability
+shap==0.46.0
+
+# Talk-to-data / LLM
+anthropic==0.34.2
+sqlalchemy==2.0.32
+sqlparse==0.5.1
+
+# UI
+streamlit==1.38.0
+plotly==5.23.0
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# Utils
+python-dotenv==1.0.1
+pyyaml==6.0.2
+faker==26.3.0
