@@ -299,7 +299,7 @@ officer, not just a data scientist.
 |---|---|---|
 | ML | LightGBM | Fast, handles missing values natively, strong tabular baseline |
 | Explainability | SHAP (TreeExplainer) | Exact + fast for tree ensembles, industry-standard |
-| LLM | Claude (`claude-sonnet-4-6`) via Anthropic API | Strong instruction-following for constrained SQL generation; offline fallback removes hard dependency |
+| LLM | Groq API | Strong instruction-following for constrained SQL generation; offline fallback removes hard dependency |
 | Talk-to-data DB | SQLite | Zero-ops, ships inside the container, sufficient for the query patterns required |
 | UI | Streamlit | Fastest path to a clean multi-section demo UI in Python |
 | Deployment | Docker + Docker Compose |single-command startup |
